@@ -60,29 +60,26 @@ Page({
   },
 
   build() {
-    // Load saved state
+    // Load saved state first
     this.loadState()
     
-    // Check for new values from other pages BEFORE creating widgets
+    // Check for new values from other pages and update state
     const newAmount = localStorage.getItem('newAmount')
     if (newAmount) {
       console.log('Found new amount in build:', newAmount)
       this.state.amount = newAmount
-      localStorage.removeItem('newAmount')
     }
     
     const newFromCurrency = localStorage.getItem('newFromCurrency')
     if (newFromCurrency) {
       console.log('Found new from currency:', newFromCurrency)
       this.state.fromCurrencyIndex = parseInt(newFromCurrency)
-      localStorage.removeItem('newFromCurrency')
     }
     
     const newToCurrency = localStorage.getItem('newToCurrency')
     if (newToCurrency) {
       console.log('Found new to currency:', newToCurrency)
       this.state.toCurrencyIndex = parseInt(newToCurrency)
-      localStorage.removeItem('newToCurrency')
     }
     
     // Title
@@ -237,6 +234,14 @@ Page({
 
     // Initial conversion
     this.performConversion()
+    
+    // Save the updated state
+    this.saveState()
+    
+    // Clean up temporary localStorage values after everything is done
+    if (newAmount) localStorage.removeItem('newAmount')
+    if (newFromCurrency) localStorage.removeItem('newFromCurrency')
+    if (newToCurrency) localStorage.removeItem('newToCurrency')
   },
 
   getCurrencyDisplay(index) {
