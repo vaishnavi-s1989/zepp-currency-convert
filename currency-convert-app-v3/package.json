@@ -1,0 +1,14 @@
+{
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "description": "Currency Converter for Zepp OS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@zeppos/device-types": "^3.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+msgid "appName"
+msgstr "Currency Converter"
+
+msgid "title"
+msgstr "Currency Converter"
+
+msgid "amount"
+msgstr "Amount"
+
+msgid "from"
+msgstr "From"
+
+msgid "to"
+msgstr "To"
+
+msgid "result"
+msgstr "Result"
+
+msgid "convert"
+msgstr "Convert"
+
+msgid "edit"
+msgstr "Edit"
+
+msgid "swap"
+msgstr "Swap"
